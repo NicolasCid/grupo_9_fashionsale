@@ -1,0 +1,126 @@
+main {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-family: lora;
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+
+#login-form-complete {
+  margin: 1.5rem auto;
+  padding: 1rem 0;
+}
+input,
+button {
+  margin: 0 auto;
+}
+
+#email,
+#pass {
+  margin-top: 0.5rem;
+}
+
+#login-button,
+#email,
+#pass {
+  border-radius: 20px;
+  padding: 10px 5px;
+  font-size: 1rem;
+  font-family: "Trebuchet MS", sans-serif;
+  width: 280px;
+}
+
+.no-show {
+  display: none;
+}
+
+.remember {
+  margin: 1rem auto;
+}
+
+#login-button {
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 0 auto;
+  background-color: #F2E5D5;
+  font-weight: 900;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 1s;
+  transition: color 0.2s;
+}
+
+#login-button:hover {
+  background-color: #a69c94;
+  color: #F2E5D5;
+}
+
+#register-link {
+  text-decoration: none;
+  color: black;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+#register-link:hover{
+  text-decoration: underline;
+  color: #a89688;
+}
+
+#login-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f2e5d5;
+  border-radius: 20px;
+}
+
+#login-form-complete p {
+  margin-left: 2rem;
+}
+
+.is-valid{
+  box-shadow: 0 0 5px 0 #34e611;
+}
+.is-invalid{
+  box-shadow: 0 0 6px 0 #eb0707;
+}
+
+@media screen and (min-width: 768px) {
+  #login-form-complete {
+    background-color: #f2e5d5;
+    border-radius: 20px;
+    width: 60vw;
+    height: 50vh;
+  }
+  main {
+    background-image: url(../img/loginFondo.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  
+  h1 {
+    font-size: 2rem;
+  }
+
+  #login-form-complete {
+    background-color: #f2e5d5;
+    border-radius: 20px;
+    width: 30vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

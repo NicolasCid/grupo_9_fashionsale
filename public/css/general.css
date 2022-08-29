@@ -1,0 +1,43 @@
+/*
+    media queries:
+        mobile: 360px
+        tablet: 769px
+        PC: 1200px (max-width 1360px)
+
+    Colores:
+        #F2E5D5: beige claro (fondo del body)
+        #403831: marrón oscuro del fondo del footer
+        #D9C9BA: beige oscuro parte de arriba del footer
+        #A69C94: fondo del header
+    
+    Íconos siempre en Solid
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+  }
+
+body {
+    background-color: #F2E5D5;
+}
+
+main {
+    min-height: 100vh;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+#banner img{
+    width: 100vw;
+}
+
+.no-show {
+    display: none;
+}
+  

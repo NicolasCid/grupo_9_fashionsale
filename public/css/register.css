@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* esto es el formulario*/
+.form-register {
+  background: #f2e5d5;
+  font-family: Roboto;
+  padding-top: 1px;
+}
+
+.form-register fieldset {
+  font-size: 1.6rem;
+}
+
+.logo-form {
+  width: 100vw;
+}
+
+#form-title {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-weight: 700;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+#form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* esto son los datos*/
+.controls {
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 5px 0;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
+}
+
+
+/* boton de facebook*/
+#access_facebook {
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 3px 0;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
+  background: #1778f2;
+  color: white;  
+}
+
+/* boton de google*/
+#form article{
+  border-top: solid 2px rgba(150, 137, 137, 0.5);
+  margin: 20px 0;
+}
+
+#form fieldset #access_google{
+  margin-top: 20px;
+}
+
+#access_google {
+  background: #ea4335;
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 3px 0;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
+  color: white;  
+}
+
+/* boton de continuar*/
+.button {
+  border-radius: 20px;
+  padding: 10px 70px;
+  margin: 0 auto;
+  background-color: #F2E5D5;
+  font-weight: 900;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 1s;
+  transition: color 0.2s;
+}
+.button:hover {
+  background-color: #a69c94;
+  color: #F2E5D5;
+}
+
+/* esto es la linea*/
+.contenedor {
+  border-top: 1px gray solid;
+  padding-top: 10px;
+}
+
+.logo-form {
+  width: 100vw;
+  
+}
+
+#logo-form-top {
+  max-width: 60px;
+  max-height: 70px;
+  margin: 5px auto;
+  display: block;
+  margin-top: 5%;
+}
+
+/*tablet*/
+@media screen and (min-width: 768px) {
+
+    #register{
+    display: flex;
+    justify-content: flex-end;
+    background: url("/img/FondoRegistro.jpg");
+    background-size: cover;
+  }
+  .form-register {
+    background: #f2e5d5;
+    border-radius: 20px;
+    width: 350px;
+    height: 50%;   
+    font-family: Roboto;
+    margin: 20px 40px;
+    margin-top: 10%;
+  }
+
+  #form {
+      padding: 1rem;
+  }
+ 
+  /* esto es el titulo*/
+  #form-title {
+    text-align: center;
+    padding-bottom: 0.3rem;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+}

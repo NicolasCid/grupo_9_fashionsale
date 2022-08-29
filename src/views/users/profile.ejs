@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+      <h2>
+        Perfil de <%= user.firstName %> <% if (user.isAdmin === true) { %> aministrador. <i class="fa-solid fa-face-sunglasses"></i> <% } %>
+      </h2>
+      <% if (user.image_id != null) { %>
+        <picture>
+          <img src="/img/Usuarios/<%=user.images.url%> " alt="Avatar <%= user.email %> " />
+        </picture>
+      <% } else {%>
+        <picture>
+          <img src="/img/Usuarios/genericUser.jpeg" alt="Imagen Genérica" />
+        </picture>
+        <% } %> 
+        <p>
+          Si lo deseas puedes subir una nueva imagen y modicar tu avatar.
+        </p>
+        <form action="/users/profile?m=PUT" method="post" enctype="multipart/form-data">
+          <input type="file" name="avatar" id="avatar">
+          <fieldset>
+            <button class="boton-editar" type="submit">Actualizar Imágen</button>
+          </fieldset>
+        </form>
+        <% if (locals.error) { %>
+              <p><%= error %></p>
+          <% } %>
+            <form action="/users/updateProfile?m=PUT" method="post" enctype="multipart/form-data"></form>
+            <fieldset>
+              <a class="boton-editar" href="/users/updateProfile"> Editar perfil </a>
+            </fieldset>
+      <form action="/users/logout" method="post">
+        <button class="boton-editar" type="submit">Logout</button>
+      </form>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+      <main>
+        <section>
+          <article>
+            <a href="/" id="volver">Volver al listado</a>
+          </article>
+        </section>
+        <section id="producto">
+            <% if (product.images != null && product.images.length > 0) { %>
+              <article class="pic-list">
+                <% if (product.images.length > 1) { %>
+                  <% for( let i = 0; i < product.images.length; i++ ) { %>
+                    <picture>
+                      <img class="small-pic" src="/img/Productos/<%=product['images'][i]['url'] %>" alt="" srcset="" />
+                    </picture>
+                      <% } %>    
+                <% } %>
+                </article>
+                <article class="main-pic">
+                  <picture>
+                    <img id="focus-pic" src="/img/Productos/<%= product.images[0]['url'] %>" alt="<%= product.name %> " />
+                  </picture>
+                </article>
+              <% } else { %> 
+                <article class="main-pic">
+                  <picture>
+                    <img id="focus-pic" src="/img/Productos/default.jpg" alt="<%= product.name %> " />
+                  </picture>
+                </article>
+                <% } %> 
+
+          <section class="description">
+            <article id="desc-top">
+              <% if (product.ofert) { %>
+                <h1 id="desc-title"><%= product.name%> | En Oferta </h1>  
+              <% } else {%>
+              <h1 id="desc-title"><%= product.name %> </h1>
+              <% } %> 
+              <h2 id="desc-prize">$
+                  <% if (product.ofert) { %>
+                    <% var newPrice = parseInt(product.price * ((100 - product.discount) / 100)) %> 
+                    <%= newPrice %>
+                  <% } else {%>
+                    <%= product.price %>
+                  <% } %>
+              </h2>
+            </article>
+            <article id="cuotas">
+              <p>12 cuotas de $ <%= product.ofert ? parseInt(newPrice / 12) : parseInt(product.price / 12) %></p>
+              <p>6 cuotas de $ <%= product.ofert ? parseInt(newPrice / 6) : parseInt(product.price / 6) %></p>
+            </article>
+            <article id="size-qty">
+              <% if (product.sizes) { %>
+                <fieldset>
+                  <legend>Talle</legend>
+                  <label for="size" class="no-show">Talle</label>
+                  <select name="size" id="talle">
+                  <% for( let i = 0; i < product.sizes.length; i++ ) { %>
+                    <option value="<%= product.sizes[i].id %> "><%= product.sizes[i].size%></option>
+                  <% } %>
+                  </select>
+                </fieldset>
+              <% } %>
+              <form action="get" id="size-qty-form">
+                <fieldset>
+                  <legend>Cantidad</legend>
+                  <label for="qty" class="no-show">Cantidad</label>
+                  <button>-</button>
+                  <input type="number" name="qty" id="qty" min="1" max="10" value="1" />
+                  <button>+</button>
+                </fieldset>
+                <fieldset>
+                  <legend class="no-show">Agregar al Carrito</legend>
+                  <label for="add-to-cart" class="no-show">Agregar al Carrito</label>
+                  <button type="submit" id="submit">Agregar al Carrito</button>
+                </fieldset>
+              </form>
+            </article>
+            <article id="desc-bottom">
+              <h3>Descripción</h3>
+              <p>
+              <% if (product.description=="" ) { %>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi blanditiis aspernatur dolore eum recusandae laborum
+                quis molestias fugit. Suscipit modi unde vel itaque ut necessitatibus iste asperiores ex quaerat ea!
+                <% } else {%>
+                  <%= product.description %>
+                    <% } %>
+                      </p>
+
+              <p>Categoría: <%= product.category %>
+                <ul class="listaTalles">
+                 <% for( let i = 0; i < product.sizes.length; i++ ) { %>
+                  <li>Talle <strong><%= product.sizes[i].size %></strong> hay un total de <%= product.sizes[i].units %>
+                    <% if (product.sizes[i].units == 1) { %>
+                     unidad.
+                    <% } else{%>
+                      unidades.</li>  
+                      <% } %> 
+                <% } %> 
+                </ul>
+              </p>  
+                        
+            </article>
+          </section>
+        </section>
+      </main>
+      <script src="/js/pruebaImg.js"></script>
+      <%- include('../partials/footer') %>
+  </body>
+
+</html>

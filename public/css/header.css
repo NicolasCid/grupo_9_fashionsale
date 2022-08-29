@@ -1,0 +1,182 @@
+#navbar-login,
+#navbar-Compra {
+  display: none;
+}
+
+.navbar-content{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  display: flex;
+  padding: 100px 50px;
+  text-align: center;
+  width: 70%;
+  height: 100vh;
+  background: #a69c94;
+  transition: all 0.6s ease-out;
+  z-index: 999;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  flex-direction: column;
+}
+.navbar-content a{
+  margin: 20px;
+  color: #F2E5D5;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navbar-content a:hover{
+  border-bottom: 1px solid #F2E5D5;
+  border-top: 1px solid #F2E5D5;
+}
+
+.navbar-content.active{
+  left: 0;
+  background: rgb(64, 56, 49);
+}
+
+.hamburgesa, .hamburgesa_close {
+  cursor: pointer;
+}
+
+header {
+  background-color: #a69c94;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-desktop {
+  display: none;
+}
+
+#logo {
+  width: 20vw;
+  max-width: 3rem;
+  margin-left: .5rem;
+}
+
+i {
+  color: #403831;
+  font-size: 1.3rem;
+}
+
+#barra{
+  height: 1.6rem;
+  border: none;
+  outline: none;
+  color: #555;
+  background: linear-gradient(#ddc8b7, #f3ede6);
+  border-radius: 3px;
+  padding-left: 10px;
+}
+
+#searchBar form {
+  position: relative;
+}
+
+.searchButton {
+  font-size: 1rem;
+  padding: 0.15rem 0.15rem; 
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
+  border-left: solid 1px rgb(213 184 184);
+  background: linear-gradient(#ddc8b7, #f3ede6);
+  cursor: pointer;
+}
+
+
+fieldset {
+  border: none;
+  outline: none;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.userLogin{
+  padding: 0 0.25rem 0.5rem 0.25rem;
+  letter-spacing: 0.05rem;
+  width: 100%;
+  text-align: center;
+}
+
+.userLogin a {
+  text-decoration: none;
+  color: black;
+  font-family: roboto;
+  padding: 1rem 0.5rem;
+  font-weight: 500;
+}
+
+header a picture img{
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  
+  .hamburgesa, .hamburgesa_close {
+    display: none;
+  }
+
+  .hamburgesa, .hamburgesa_close {
+    background-color: transparent;
+  }
+
+  .navbar-content {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    height: 60px;
+    width: 50vw;
+    transition: none;
+    flex-wrap: wrap;
+    align-items: center;
+    outline: none;
+    border: none;
+    justify-content: space-around;
+  }
+  .navbar-content a{
+    margin: 5px;
+    color: #F2E5D5;
+    text-decoration: none;
+    font-family: roboto;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px;
+  }
+  #barra {
+    width: 20vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    justify-content: space-evenly;
+  }
+
+  .logo-simple {
+    display: none;
+  }
+  
+  .logo-desktop {
+    display: inline-block;
+  }
+
+  #logo-big {
+    max-width: 200px;
+  }
+
+  .navbar-content a {
+    font-size: 1.2rem;
+  }
+
+  .fa-bars {
+    display: none;
+  }
+}
